@@ -1,11 +1,76 @@
     1  script ws4.txt
-    2  history > cmds.log
-    3  git add cmds.log ws4.txt
-    4  git commit -m "Committing the command log and console output of worksheet 4"
-    5  git remote add origin https://github.com/evrenke/CS185Worksheet4.git
-    6  git remote set_url origin https://github.com/evrenke/CS185Worksheet4.git
-    7  git remote set-url origin https://github.com/evrenke/CS185Worksheet4.git
-    8  git push -u origin main
-    9  git push -u origin maaster
-   10  git push -u origin master
-   11  history > cmds.log
+    2  mkdir CUSTOMERS
+    3  mkdir PRODUCTS
+    4  touch CUSTOMERS/15437121.txt
+    5  touch CUSTOMERS/50732546.txt
+    6  touch CUSTOMERS/12076615.txt
+    7  touch PRODUCTS/56191234.txt
+    8  touch PRODUCTS/702385650.txt
+    9  touch PRODUCTS/635714194.txt
+   10  sort -nk2 amazon_reviews_us_Books_v1_02.tsv | cut -f 2,9 | egrep 15437121 | cut -f 2 > CUSTOMERS/15437121.txt
+   11  sort -nk2 amazon_reviews_us_Books_v1_02.tsv | cut -f 2,9 | egrep 50732546 | cut -f 2 > CUSTOMERS/50732546.txt
+   12  sort -nk2 amazon_reviews_us_Books_v1_02.tsv | cut -f 2,9 | egrep 12076615 | cut -f 2 > CUSTOMERS/12076615.txt
+   13  sort -nk4 amazon_reviews_us_Books_v1_02.tsv | cut -f 4,9 | egrep 56191234 | cut -f 2 > PRODUCTS/56191234.txt
+   14  sort -nk4 amazon_reviews_us_Books_v1_02.tsv | cut -f 4,9 | egrep 702385650 | cut -f 2 > PRODUCTS/702385650.txt
+   15  sort -nk4 amazon_reviews_us_Books_v1_02.tsv | cut -f 4,9 | egrep 635714194 | cut -f 2 > PRODUCTS/635714194.txt
+   16  awk '
+    NR>=1{
+        sum[0]   += $1
+        sumSquared[0] += $1 * $1
+        count[0] += 1
+    }
+    END{
+        print "mean = " sum[0] / count[0] " variance = " ((sum[0]*sum[0]) - sumSquared[0])/(count[0]);
+    }
+'  CUSTOMERS/15437121.txt
+   17  awk '
+    NR>=1{
+        sum[0]   += $1
+        sumSquared[0] += $1 * $1
+        count[0] += 1
+    }
+    END{
+        print "mean = " sum[0] / count[0] " variance = " ((sum[0]*sum[0]) - sumSquared[0])/(count[0]);
+    }
+'  CUSTOMERS/50732546.txt
+   18  awk '
+    NR>=1{
+        sum[0]   += $1
+        sumSquared[0] += $1 * $1
+        count[0] += 1
+    }
+    END{
+        print "mean = " sum[0] / count[0] " variance = " ((sum[0]*sum[0]) - sumSquared[0])/(count[0]);
+    }
+'  CUSTOMERS/12076615.txt
+   19  awk '
+    NR>=1{
+        sum[0]   += $1
+        sumSquared[0] += $1 * $1
+        count[0] += 1
+    }
+    END{
+        print "mean = " sum[0] / count[0] " variance = " ((sum[0]*sum[0]) - sumSquared[0])/(count[0]);
+    }
+'  PRODUCTS/56191234.txt
+   20  awk '
+    NR>=1{
+        sum[0]   += $1
+        sumSquared[0] += $1 * $1
+        count[0] += 1
+    }
+    END{
+        print "mean = " sum[0] / count[0] " variance = " ((sum[0]*sum[0]) - sumSquared[0])/(count[0]);
+    }
+'  PRODUCTS/702385650.txt
+   21  awk '
+    NR>=1{
+        sum[0]   += $1
+        sumSquared[0] += $1 * $1
+        count[0] += 1
+    }
+    END{
+        print "mean = " sum[0] / count[0] " variance = " ((sum[0]*sum[0]) - sumSquared[0])/(count[0]);
+    }
+' PRODUCTS/635714194.txt
+   21  history > cmds.log
