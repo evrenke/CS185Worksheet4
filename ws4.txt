@@ -1,4 +1,14 @@
 Script started on 2021-09-24 05:56:47+00:00 [TERM="xterm" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+
+// COMMENTING:
+// I picked 3 customer ID's : 15437121, 50732546, and 12076615
+// and 3 product ID'S: 56191234, 702385650, and 635714194
+// Two customers left only one review, but the third left many reviews, with many helpfulness scores from them
+// Unfortunately something went wrong with getting the helpfulness scores of the products, so I was unable to find mean or variance from them
+// awk command usages at the end show the mean and variance values of the helpfulness scores
+// COMMENT OVER
+
+
 ]0;keskin@f6linux6: ~keskin@f6linux6:~$ k[Kmkdir CUSTOMERS
 ]0;keskin@f6linux6: ~keskin@f6linux6:~$ mkdir PRODUCTS
 ]0;keskin@f6linux6: ~keskin@f6linux6:~$ touch CUSTOMERS/15437121.txt
@@ -64,7 +74,11 @@ mean = 2 variance = 0
 awk: cmd. line:8: fatal: division by zero attempted
 ]0;keskin@f6linux6: ~keskin@f6linux6:~$ cd PRODC[KICT[K[K[KUCTS
 ]0;keskin@f6linux6: ~/PRODUCTSkeskin@f6linux6:~/PRODUCTS$ nano 56191234.txt
-[?2004h[?1049h[22;0;0t[1;24r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[22;34H(B[0;7m[ Reading... ](B[m[22;33H(B[0;7m[ Read 0 lines ](B[m[H(B[0;7m  GNU nano 4.8                      56191234.txt                                [1;79H(B[m[23d(B[0;7m^G(B[m Get Help  (B[0;7m^O(B[m Write Out (B[0;7m^W(B[m Where Is  (B[0;7m^K(B[m Cut Text  (B[0;7m^J(B[m Justify   (B[0;7m^C(B[m Cur Pos[24d(B[0;7m^X(B[m Exit[14G(B[0;7m^R(B[m Read File (B[0;7m^\(B[m Replace   (B[0;7m^U(B[m Paste Text(B[0;7m^T(B[m To Spell  (B[0;7m^_(B[m Go To Line[22d[2d[39;49m(B[m[?12l[?25h[?25l[22d[J[24d[?12l[?25h[24;1H[?1049l[23;0;0t[?1l>[?2004l]0;keskin@f6linux6: ~/PRODUCTSkeskin@f6linux6:~/PRODUCTS$ cd
+[?2004h[?1049h[22;0;0t[1;24r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[22;34H(B[0;7m[ Reading... ](B[m[22;33H(B[0;7m[ Read 0 lines ](B[m[H(B[0;7m  GNU nano 4.8                      56191234.txt                                [1;79H(B[m
+[23d(B[0;7m^G(B[m Get Help  (B[0;7m^O(B[m Write Out (B[0;7m^W(B[m Where Is  (B[0;7m^K(B[m Cut Text  (B[0;7m^J(B[m Justify   (B[0;7m^C(B[m Cur Pos
+[24d(B[0;7m^X(B[m Exit[14G(B[0;7m^R(B[m Read File (B[0;7m^\(B[m Replace   (B[0;7m^U(B[m Paste Text(B[0;7m^T(B[m To Spell  (B[0;7m^_(B[m Go To Line
+[22d[2d[39;49m(B[m[?12l[?25h[?25l[22d[J[24d[?12l[?25h[24;1H[?1049l[23;0;0t
+[?1l>[?2004l]0;keskin@f6linux6: ~/PRODUCTSkeskin@f6linux6:~/PRODUCTS$ cd
 ]0;keskin@f6linux6: ~keskin@f6linux6:~$ awk '
 >     NR>=1{
 >         sum[0]   += $1
@@ -78,7 +92,11 @@ awk: cmd. line:8: fatal: division by zero attempted
 awk: cmd. line:8: fatal: division by zero attempted
 ]0;keskin@f6linux6: ~keskin@f6linux6:~$ fd[K[Kcd PRODUCTS
 ]0;keskin@f6linux6: ~/PRODUCTSkeskin@f6linux6:~/PRODUCTS$ nano 702385650.txt
-[?2004h[?1049h[22;0;0t[1;24r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[22;34H(B[0;7m[ Reading... ](B[m[22;33H(B[0;7m[ Read 0 lines ](B[m[H(B[0;7m  GNU nano 4.8                     702385650.txt                                [1;79H(B[m[23d(B[0;7m^G(B[m Get Help  (B[0;7m^O(B[m Write Out (B[0;7m^W(B[m Where Is  (B[0;7m^K(B[m Cut Text  (B[0;7m^J(B[m Justify   (B[0;7m^C(B[m Cur Pos[24d(B[0;7m^X(B[m Exit[14G(B[0;7m^R(B[m Read File (B[0;7m^\(B[m Replace   (B[0;7m^U(B[m Paste Text(B[0;7m^T(B[m To Spell  (B[0;7m^_(B[m Go To Line[22d[2d[39;49m(B[m[?12l[?25h[?25l[22d[J[24d[?12l[?25h[24;1H[?1049l[23;0;0t[?1l>[?2004l]0;keskin@f6linux6: ~/PRODUCTSkeskin@f6linux6:~/PRODUCTS$ cd
+[?2004h[?1049h[22;0;0t[1;24r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[22;34H(B[0;7m[ Reading... ](B[m[22;33H(B[0;7m[ Read 0 lines ](B[m[H(B[0;7m  GNU nano 4.8                     702385650.txt                                [1;79H(B[m
+[23d(B[0;7m^G(B[m Get Help  (B[0;7m^O(B[m Write Out (B[0;7m^W(B[m Where Is  (B[0;7m^K(B[m Cut Text  (B[0;7m^J(B[m Justify   (B[0;7m^C(B[m Cur Pos
+[24d(B[0;7m^X(B[m Exit[14G(B[0;7m^R(B[m Read File (B[0;7m^\(B[m Replace   (B[0;7m^U(B[m Paste Text(B[0;7m^T(B[m To Spell  (B[0;7m^_(B[m Go To Line
+[22d[2d[39;49m(B[m[?12l[?25h[?25l[22d[J[24d[?12l[?25h[24;1H[?1049l[23;0;0t
+[?1l>[?2004l]0;keskin@f6linux6: ~/PRODUCTSkeskin@f6linux6:~/PRODUCTS$ cd
 ]0;keskin@f6linux6: ~keskin@f6linux6:~$ awk '
 >     NR>=1{
 >         sum[0]   += $1
